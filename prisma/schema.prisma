@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite" // Oder eine andere DB wie MySQL, SQLite, etc.
+  url      = env("DATABASE_URL")
+}
+
+model Engine {
+  id                        String     @id @default(uuid())
+  assetId                   Int        @unique
+  countOpHour               Int?
+  powerPowerNominal         Int?
+  paraSpeedNominal          Int?
+  operationalCondition      String?
+  shutdowncounter           Int?
+  startupcounter            Int?
+  startsophratio            Float?
+  engineVersion             String?
+  engineType                String?
+  engineSeries              String?
+  country                   String?
+  commissioningDate         DateTime?
+  designNumber              String?
+  serialNumber              String      @unique
+  controlSystemType         String?
+  engineID                  String?
+  iBUnitCommissioningDate   DateTime?
+  iBNOX                     String?
+  iBFrequency               String?
+  iBItemDescriptionEngine   String?
+  iBSiteName                String?
+  iBStatus                  String?
+  moduleVersHalIO           String?
+  contractWarrantyStartDate DateTime?
+  contractWarrantyEndDate   DateTime?
+  productProgram            String?
+}
