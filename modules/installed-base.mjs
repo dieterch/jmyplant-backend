@@ -97,17 +97,17 @@ const  _fetchInstalledBase = async (mp, fields, properties, dataItems, limit) =>
     console.log(`${ret['fleet'].length} engines in Installed Base`)
     
     // Define the file path to save the JSON
-    const outputDir = path.join(process.cwd(), 'output');
+    // const outputDir = path.join(process.cwd(), 'output');
 
     // Ensure the output directory exists
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir);
-    }
+    // if (!fs.existsSync(outputDir)) {
+    //   fs.mkdirSync(outputDir);
+    // }
 
     // Save fleet to a file in JSON format
-    let filePath = path.join(outputDir, `installed-base.json`);
-    fs.writeFileSync(filePath, JSON.stringify(ret['fleet'], null, 2));
-    console.log(`Fleet data saved to ${filePath}`);
+    // let filePath = path.join(outputDir, `installed-base.json`);
+    // fs.writeFileSync(filePath, JSON.stringify(ret['fleet'], null, 2));
+    // console.log(`Fleet data saved to ${filePath}`);
 
     // // Save fleet to a file in JSON format
     // filePath = path.join(outputDir, `installed-base-raw.json`);
